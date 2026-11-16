@@ -1,0 +1,421 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Afrishore November 2026 Report</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Open+Sans:wght@400;600;700&display=swap">
+<style>
+/* Layout: charcoal masthead, then a single light reading column of numbered report sections (the order is the agenda for the meeting). */
+:root {
+  --teal: #4DB6AC;
+  --deep: #2E7D78;
+  --ink: #212121;
+  --bg: #F3F6F6;
+  --paper: #FFFFFF;
+  --muted: #5E6B6A;
+  --line: #DDE5E4;
+  --tint: #E6F3F1;
+  --display: "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --body: "Open Sans", "Segoe UI", Arial, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 15px; line-height: 1.55; }
+a { color: var(--deep); }
+.wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+
+/* Masthead */
+.mast { background: var(--ink); color: #fff; }
+.mast .wrap { padding-block: 44px 40px; }
+.eyebrow { font-family: var(--display); font-size: 11.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--teal); }
+.mast h1 { font-family: var(--display); font-weight: 800; font-size: clamp(28px, 4.6vw, 42px); line-height: 1.12; margin: 10px 0 14px; text-wrap: balance; }
+.mast p.lede { max-width: 66ch; color: #D6DEDD; margin: 0; font-size: 16px; }
+.mast .meta { margin-top: 18px; font-size: 12.5px; color: #A9B6B4; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+
+/* Sections */
+main .wrap { padding-block: 28px 56px; display: grid; gap: 22px; }
+section.card { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 28px clamp(18px, 3.4vw, 34px); min-width: 0; }
+.sec-head { display: flex; align-items: baseline; gap: 12px; margin-bottom: 6px; }
+.sec-num { font-family: var(--display); font-weight: 800; color: var(--teal); font-size: 15px; font-variant-numeric: tabular-nums; }
+h2 { font-family: var(--display); font-size: clamp(20px, 2.6vw, 24px); line-height: 1.25; margin: 0; text-wrap: balance; }
+.sec-sub { color: var(--muted); margin: 6px 0 20px; max-width: 70ch; }
+h3 { font-family: var(--display); font-size: 15.5px; margin: 22px 0 10px; }
+
+/* Headline tiles */
+.tiles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.tile { border: 1px solid var(--line); border-radius: 8px; padding: 18px 16px; display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.tile .big { font-family: var(--display); font-weight: 800; font-size: 30px; line-height: 1; color: var(--deep); font-variant-numeric: tabular-nums; }
+.tile .what { font-family: var(--display); font-weight: 700; font-size: 14px; }
+.tile .why { font-size: 13px; color: var(--muted); line-height: 1.45; }
+.tile.solid { background: var(--deep); border-color: var(--deep); color: #fff; }
+.tile.solid .big, .tile.solid .what { color: #fff; }
+.tile.solid .why { color: #D8EEEB; }
+
+/* Stat strip */
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.stat { padding: 16px; border-right: 1px solid var(--line); min-width: 0; }
+.stat:last-child { border-right: 0; }
+.stat .n { font-family: var(--display); font-weight: 800; font-size: 26px; color: var(--ink); font-variant-numeric: tabular-nums; }
+.stat .d { font-size: 12.5px; font-weight: 700; color: var(--deep); }
+.stat .l { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+/* Tables */
+.tbl { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; min-width: 560px; }
+th { text-align: left; font-family: var(--display); font-size: 10.5px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); padding: 9px 10px; border-bottom: 2px solid var(--ink); white-space: nowrap; }
+td { padding: 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+tr:last-child td { border-bottom: 0; }
+td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.chip { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 9px; border-radius: 99px; background: var(--tint); color: var(--deep); white-space: nowrap; }
+.chip.dark { background: var(--ink); color: #fff; }
+.chip.grey { background: #ECEFEF; color: var(--muted); }
+
+/* Notes and quotes */
+.note { background: var(--tint); border-radius: 8px; padding: 14px 18px; font-size: 14px; margin-top: 16px; }
+.note.ink { background: #EEF0F0; }
+.note strong { color: var(--ink); }
+blockquote { margin: 14px 0 0; padding: 16px 20px; border-left: 4px solid var(--teal); background: #F7FAFA; font-size: 14.5px; }
+blockquote cite { display: block; margin-top: 8px; font-style: normal; font-size: 12.5px; color: var(--muted); }
+
+/* Case studies */
+.cases { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+.case { border: 1px solid var(--line); border-radius: 8px; padding: 18px; display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+.case .tag { font-family: var(--display); font-size: 10.5px; letter-spacing: 1.4px; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+.case .fig { font-family: var(--display); font-weight: 800; font-size: 26px; color: var(--deep); line-height: 1.05; }
+.case .t { font-weight: 700; font-size: 14.5px; }
+.case p { margin: 0; font-size: 13.5px; color: #3D4847; }
+.case a { font-size: 12.5px; margin-top: auto; }
+
+/* Lists */
+ul.done { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+ul.done li { position: relative; padding-left: 22px; font-size: 14px; }
+ul.done li::before { content: ""; position: absolute; left: 2px; top: 7px; width: 9px; height: 9px; border-radius: 2px; background: var(--teal); }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 22px; }
+
+/* Plan */
+.plan { display: grid; gap: 12px; counter-reset: p; }
+.step { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 16px; }
+.step .k { counter-increment: p; font-family: var(--display); font-weight: 800; font-size: 22px; color: #fff; background: var(--deep); border-radius: 6px; height: 44px; display: grid; place-items: center; }
+.step .k::before { content: counter(p); }
+.step h4 { font-family: var(--display); font-size: 15px; margin: 0 0 4px; }
+.step p { margin: 0; font-size: 13.5px; color: #3D4847; }
+.step .why { margin-top: 6px; font-size: 12.5px; color: var(--muted); }
+
+/* Chart */
+.chart { overflow-x: auto; margin-top: 8px; }
+.chart svg { display: block; min-width: 600px; width: 100%; height: auto; font-family: var(--body); }
+.legend { display: flex; flex-wrap: wrap; gap: 16px; font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
+
+.src { font-size: 12px; color: var(--muted); margin-top: 12px; }
+footer { text-align: center; font-size: 12px; color: var(--muted); padding-bottom: 32px; }
+
+@media (max-width: 760px) {
+  .tiles, .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat:nth-child(2) { border-right: 0; }
+  .stat:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+  .cases, .two { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 420px) {
+  .tiles { grid-template-columns: minmax(0, 1fr); }
+}
+@media print {
+  body { background: #fff; font-size: 12px; }
+  section.card { break-inside: avoid; border-color: #ccc; }
+  .mast { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+</head>
+<body>
+
+
+<header class="mast">
+  <div class="wrap">
+    <div class="eyebrow">Afrishore Group · Monthly Marketing Report</div>
+    <h1>November 2026: case studies live, AI now recommending us, and Afrishore Quant launched</h1>
+    <p class="lede">What we shipped, what it is producing, and the plan for the next four weeks. Buyer markets only: US, UK, Australia, Canada and Ireland. South African traffic (mostly job seekers) is excluded throughout.</p>
+    <div class="meta"><span>Reporting period: 16 October to 16 November 2026</span><span>Prepared by Danny Schaffer</span></div>
+  </div>
+</header>
+
+<main>
+<div class="wrap">
+
+<!-- 0 HEADLINES -->
+<section class="card" aria-labelledby="h0">
+  <div class="sec-head"><span class="sec-num">00</span><h2 id="h0">The short version</h2></div>
+  <p class="sec-sub">Four things to take from this month.</p>
+  <div class="tiles">
+    <div class="tile solid">
+      <div class="big">26</div>
+      <div class="what">Pages shipped</div>
+      <div class="why">20 articles, Afrishore's first 4 case study pages, the rebuilt IT Outsourcing page and the new Technology page. All live.</div>
+    </div>
+    <div class="tile">
+      <div class="big">1 Dec</div>
+      <div class="what">Afrishore Quant launched</div>
+      <div class="why">The new actuarial division's UK campaign is live. First meeting booked in week 1: InsureLab.ai's CEO and Chief Actuary, in London.</div>
+    </div>
+    <div class="tile">
+      <div class="big">Named</div>
+      <div class="what">by Google Gemini</div>
+      <div class="why">Gemini lists Afrishore among the top South African BPOs for US and UK businesses. Its source is the GoodFirms profile we rebuilt in October.</div>
+    </div>
+    <div class="tile">
+      <div class="big">5</div>
+      <div class="what">Website leads in CRM</div>
+      <div class="why">Across Core BPO, ITO and FSO, including an inbound website lead for ITO.</div>
+    </div>
+  </div>
+  <div class="note"><strong>Also this month:</strong> Afrishore won the BPESA GBS Alchemy <strong>Best Medium Operator Award 2026</strong> (11 November). Marketing is turning it into third-party proof: an Outsource Accelerator company update is written and ready, and the award is already cited in the refreshed "outsource customer service to South Africa" guide.</div>
+</section>
+
+<!-- 1 PIPELINE -->
+<section class="card" aria-labelledby="h1">
+  <div class="sec-head"><span class="sec-num">01</span><h2 id="h1">Pipeline: website leads and the Afrishore Quant launch</h2></div>
+  <p class="sec-sub">Website leads from the CRM (Bitrix24, created 16 Oct to 16 Nov, source = Website), and the first results from the new Quant division.</p>
+
+  <h3>New this month: Afrishore Quant goes to market</h3>
+  <div class="stats">
+    <div class="stat"><div class="n">191</div><div class="d">Week 1</div><div class="l">UK actuarial and insurance leaders approached by Jeremy Spira</div></div>
+    <div class="stat"><div class="n">28%</div><div class="d">54 accepted</div><div class="l">Acceptance rate, rising to 50%+ for prospects with a South African link</div></div>
+    <div class="stat"><div class="n">13</div><div class="d">Replies</div><div class="l">From life, health and general insurers and consultancies</div></div>
+    <div class="stat"><div class="n">1 Dec</div><div class="d">Meeting booked</div><div class="l">InsureLab.ai CEO and Chief Actuary, in person in London</div></div>
+  </div>
+  <div class="note">The UK campaign launched in late October after Jeremy signed off the messaging. Weeks 2 and 3 are now out, and a three-way message test was agreed with Jeremy on 9 November.</div>
+
+  <h3>Website leads</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Company</th><th>Contact</th><th>Division</th><th>Created</th><th>Stage</th></tr></thead>
+      <tbody>
+        <tr><td><strong>IOTEC</strong></td><td>Jared S</td><td><span class="chip">ITO</span></td><td class="num">19 Oct</td><td>Warm lead</td></tr>
+        <tr><td><strong>Skeduled</strong></td><td>James</td><td><span class="chip grey">Not tagged</span></td><td class="num">19 Oct</td><td>Warm lead</td></tr>
+        <tr><td><strong>Crowncards</strong></td><td>Tom</td><td><span class="chip grey">Not tagged</span></td><td class="num">22 Oct</td><td>Warm lead</td></tr>
+        <tr><td><strong>Tattoox</strong></td><td>Alvar Antunez</td><td><span class="chip grey">Not tagged</span></td><td class="num">11 Nov</td><td>Warm lead</td></tr>
+        <tr><td><strong>Sampson Cleaning Service</strong></td><td>David</td><td><span class="chip">FSO</span></td><td class="num">11 Nov</td><td>Warm lead</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="note"><strong>Where the website enquiries came from (GA4):</strong> Google search and directory profiles. Clutch.co alone sent 4 contact-form enquiries this month (1 from the US), which is why directory and review work is a priority in next month's plan.</div>
+</section>
+
+<!-- 2 CASE STUDIES -->
+<section class="card" aria-labelledby="h2">
+  <div class="sec-head"><span class="sec-num">02</span><h2 id="h2">Case studies: Afrishore's first published proof</h2></div>
+  <p class="sec-sub">Live since 23 October at <a href="https://afrishorebpo.com/case-studies/">afrishorebpo.com/case-studies</a>. Before this month Afrishore had no published case studies, so buyers, directories and AI assistants had no client results to point to. All three are anonymised, need no client sign-off, and were approved by Anton and Kobus.</p>
+  <div class="cases">
+    <article class="case">
+      <div class="tag">Healthcare · US</div>
+      <div class="fig">65% → 98%</div>
+      <div class="t">Neurology lab, inbound patient calls</div>
+      <p>Answer rate hit 98% within 7 days of go-live and held there as volume passed 16,000 calls a month. The budget that paid for 5 in-house staff now funds 17 seats.</p>
+      <a href="https://afrishorebpo.com/case-studies/us-neurology-lab-inbound-calls/">View case study</a>
+    </article>
+    <article class="case">
+      <div class="tag">Collections · US and UK</div>
+      <div class="fig">+33%</div>
+      <div class="t">International ARM programme</div>
+      <p>The US campaign beat its previous best month by more than 33%, UK collections volume grew 5x in a single month, and US pre-collections performance doubled.</p>
+      <a href="https://afrishorebpo.com/case-studies/international-arm-collections/">View case study</a>
+    </article>
+    <article class="case">
+      <div class="tag">Travel · Global</div>
+      <div class="fig">70 → 250</div>
+      <div class="t">Ferry booking platform, seasonal ramp</div>
+      <p>The team grows from 70 agents in winter to 250 at summer peak, in 6 voice languages plus AI translation across 180 more, with a record 85% CSAT.</p>
+      <a href="https://afrishorebpo.com/case-studies/ferry-booking-seasonal-ramp/">View case study</a>
+    </article>
+  </div>
+  <div class="note ink"><strong>How they get used:</strong> next month they go onto the matching service pages, into sales follow-ups, and into the GoodFirms portfolio, which is the profile Gemini is now quoting.</div>
+</section>
+
+<!-- 3 SEO -->
+<section class="card" aria-labelledby="h3">
+  <div class="sec-head"><span class="sec-num">03</span><h2 id="h3">SEO: more visibility, and the pages are climbing</h2></div>
+  <p class="sec-sub">Google Search Console, last 28 days (18 Oct to 14 Nov) compared with the 28 days before. Buyer markets only.</p>
+  <div class="stats">
+    <div class="stat"><div class="n">18,645</div><div class="d">+43%</div><div class="l">Buyer-market impressions (from 13,081)</div></div>
+    <div class="stat"><div class="n">10,351</div><div class="d">+139%</div><div class="l">UK impressions (from 4,331)</div></div>
+    <div class="stat"><div class="n">45</div><div class="d">+50%</div><div class="l">US clicks (from 30)</div></div>
+    <div class="stat"><div class="n">20</div><div class="d">4 weekly batches</div><div class="l">Articles published, all scored 84+ before upload</div></div>
+  </div>
+
+  <h3>Pages that moved up (average buyer-market position, lower is better)</h3>
+  <div class="chart" role="img" aria-label="Dot chart of average Google position before and after for seven pages. South Africa vs Philippines improved from 15.2 to 3.7; Accounts receivable management from 54.3 to 12.3; Customer service outsourcing companies from 45.1 to 32.8; Claims processing outsourcing from 23.8 to 16.0; AML compliance in iGaming from 18.2 to 15.0; Offshore call center attrition rates from 8.9 to 5.0; Measuring BPO ROI from 9.0 to 7.6.">
+    <svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg">
+      <g font-size="11" fill="#5E6B6A" text-anchor="middle">
+        <text x="246.3" y="16">1</text><text x="303.3" y="16">10</text><text x="366.7" y="16">20</text><text x="430" y="16">30</text><text x="493.3" y="16">40</text><text x="556.7" y="16">50</text><text x="620" y="16">60</text>
+      </g>
+      <g stroke="#DDE5E4" stroke-width="1">
+        <line x1="246.3" y1="24" x2="246.3" y2="272"/><line x1="303.3" y1="24" x2="303.3" y2="272"/><line x1="366.7" y1="24" x2="366.7" y2="272"/><line x1="430" y1="24" x2="430" y2="272"/><line x1="493.3" y1="24" x2="493.3" y2="272"/><line x1="556.7" y1="24" x2="556.7" y2="272"/><line x1="620" y1="24" x2="620" y2="272"/>
+      </g>
+      <rect x="246.3" y="24" width="57" height="248" fill="#4DB6AC" opacity="0.08"/>
+      <text x="274.8" y="284" font-size="10" fill="#2E7D78" text-anchor="middle" font-weight="700">Page 1</text>
+      <g font-size="12.5" fill="#212121" text-anchor="end">
+        <text x="228" y="44">SA vs Philippines</text>
+        <text x="228" y="80">Accounts receivable mgmt</text>
+        <text x="228" y="116">Customer service outsourcing cos.</text>
+        <text x="228" y="152">Claims processing outsourcing</text>
+        <text x="228" y="188">AML compliance in iGaming</text>
+        <text x="228" y="224">Call center attrition rates</text>
+        <text x="228" y="260">Measuring BPO ROI</text>
+      </g>
+      <g stroke="#4DB6AC" stroke-width="3" stroke-linecap="round">
+        <line x1="336.3" y1="40" x2="263.4" y2="40"/>
+        <line x1="583.9" y1="76" x2="317.9" y2="76"/>
+        <line x1="525.7" y1="112" x2="447.7" y2="112"/>
+        <line x1="390.7" y1="148" x2="341.3" y2="148"/>
+        <line x1="355.3" y1="184" x2="335.0" y2="184"/>
+        <line x1="296.4" y1="220" x2="271.7" y2="220"/>
+        <line x1="297.0" y1="256" x2="288.1" y2="256"/>
+      </g>
+      <g fill="#FFFFFF" stroke="#8A9796" stroke-width="2">
+        <circle cx="336.3" cy="40" r="5"/><circle cx="583.9" cy="76" r="5"/><circle cx="525.7" cy="112" r="5"/><circle cx="390.7" cy="148" r="5"/><circle cx="355.3" cy="184" r="5"/><circle cx="296.4" cy="220" r="5"/><circle cx="297.0" cy="256" r="5"/>
+      </g>
+      <g fill="#2E7D78">
+        <circle cx="263.4" cy="40" r="6"/><circle cx="317.9" cy="76" r="6"/><circle cx="447.7" cy="112" r="6"/><circle cx="341.3" cy="148" r="6"/><circle cx="335.0" cy="184" r="6"/><circle cx="271.7" cy="220" r="6"/><circle cx="288.1" cy="256" r="6"/>
+      </g>
+      <g font-size="11.5" font-weight="700" fill="#2E7D78" text-anchor="middle">
+        <text x="263.4" y="32">3.7</text><text x="317.9" y="68">12.3</text><text x="447.7" y="104">32.8</text><text x="341.3" y="140">16.0</text><text x="335.0" y="176">15.0</text><text x="271.7" y="212">5.0</text><text x="285" y="248">7.6</text>
+      </g>
+      <g font-size="11" fill="#8A9796" text-anchor="start">
+        <text x="345" y="44">15.2</text><text x="593" y="80">54.3</text><text x="535" y="116">45.1</text><text x="400" y="152">23.8</text><text x="364" y="188">18.2</text><text x="305" y="224">8.9</text><text x="306" y="260">9.0</text>
+      </g>
+    </svg>
+  </div>
+  <div class="legend"><span><i class="dot" style="background:#fff;border:2px solid #8A9796"></i>Previous 28 days</span><span><i class="dot" style="background:#2E7D78"></i>Last 28 days</span><span>Shaded band = Google page 1</span></div>
+
+  <div class="two" style="margin-top:18px">
+    <div>
+      <h3>Other movement worth knowing</h3>
+      <ul class="done">
+        <li><strong>Customer service outsourcing companies (UK):</strong> impressions nearly tripled, 1,521 to 4,382. This is the UK buyer cluster we refreshed on 10 November.</li>
+        <li><strong>Hospitality outsourcing</strong> (new, 21 Oct): 373 buyer impressions in its first weeks.</li>
+        <li><strong>After-hours call center outsourcing:</strong> 4 to 253 impressions.</li>
+        <li><strong>SA vs Philippines</strong> is now a top-4 result in the UK, and AI assistants cite it (section 04).</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Where we are not there yet</h3>
+      <p style="margin:0;font-size:14px">Buyer clicks held steady (75 to 76). Almost all of them are branded searches or homepage visits, because our main service pages still sit on Google pages 2 and 3, where few people click. Google now sees and ranks the content. To reach page 1 the pages need more authority: mentions, reviews and links from other sites. Next month's plan is built around that.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 4 GEO -->
+<section class="card" aria-labelledby="h4">
+  <div class="sec-head"><span class="sec-num">04</span><h2 id="h4">AI visibility (GEO): what ChatGPT, Gemini and Perplexity say about us</h2></div>
+  <p class="sec-sub">We ran real buyer questions through ChatGPT, Gemini, Perplexity, Google AI Overviews and Google AI Mode with MentionScout (about 100 answers this month) and read every answer and citation.</p>
+
+  <blockquote>"<strong>Afrishore BPO:</strong> Frequently utilized by US and UK firms for customer service, financial operations, and debt collection, Afrishore provides an owner-led, dedicated team model that suits businesses wanting direct oversight and shorter decision loops."
+    <cite>Google Gemini, 16 Nov 2026, answering "What are the top BPO companies in South Africa for US and UK businesses?" Source cited: Afrishore's GoodFirms listing, rebuilt by us on 13 October.</cite>
+  </blockquote>
+
+  <h3>Where AI assistants name or cite Afrishore</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Buyer question</th><th>Engine</th><th>Result</th></tr></thead>
+      <tbody>
+        <tr><td>Top BPO companies in South Africa for US and UK businesses</td><td>Gemini</td><td><span class="chip dark">Recommended</span></td></tr>
+        <tr><td>Best BPO companies in South Africa (tracked weekly since September)</td><td>ChatGPT, Gemini</td><td><span class="chip dark">Named in 3 of 4 answers</span></td></tr>
+        <tr><td>Best call center outsourcing companies in South Africa (tracked weekly since September)</td><td>ChatGPT, Gemini</td><td><span class="chip dark">Named in 3 of 4 answers</span></td></tr>
+        <tr><td>How much does it cost to outsource customer support to South Africa?</td><td>ChatGPT, Perplexity, Gemini</td><td><span class="chip">Our pages cited</span></td></tr>
+        <tr><td>Call center attrition: Philippines vs South Africa vs India</td><td>ChatGPT, Perplexity</td><td><span class="chip dark">Named and cited</span></td></tr>
+        <tr><td>Is South Africa or the Philippines better for customer support?</td><td>Perplexity</td><td><span class="chip">Our page cited</span></td></tr>
+        <tr><td>Can I outsource insurance claims processing offshore?</td><td>Gemini</td><td><span class="chip">Our page cited</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><strong>The pattern:</strong> AI cites Afrishore wherever we publish real numbers (costs, attrition, country comparisons). For "best X companies" questions it relies on directories and review sites (GoodFirms, Clutch, Outsource Accelerator, RevenueBase). Gemini's recommendation came from our GoodFirms listing, and Google AI Mode built its answer to the same question from RevenueBase, a listing we have not claimed yet. Directory profiles and reviews are now the fastest route into AI recommendations.</div>
+
+  <h3>Groundwork completed this month</h3>
+  <ul class="done">
+    <li><strong>GoodFirms PRO profile rebuilt</strong>: 1,000+ headcount, approved company description, service mix checked with Anton. This is the text Gemini now quotes.</li>
+    <li><strong>Directory alignment pack</strong> for Outsource Accelerator, Clutch and DesignRush, so every listing tells AI the same facts.</li>
+    <li><strong>Client review programme agreed:</strong> real clients only (Kobus), with an anonymous option. First requests go to GoodFirms, which has 0 reviews today.</li>
+    <li><strong>Claude visibility check</strong> (Anton's question): Claude searches with the Brave index. On Brave, Afrishore ranks #1 for "debt collection outsourcing south africa" and top 5 for "bpo companies in south africa" and "best bpo companies south africa".</li>
+    <li><strong>Outsource Accelerator:</strong> November and December articles agreed with Anton. The insurance-finance article was revised and the BPESA award update is ready to post.</li>
+  </ul>
+</section>
+
+<!-- 5 DIVISIONS -->
+<section class="card" aria-labelledby="h5">
+  <div class="sec-head"><span class="sec-num">05</span><h2 id="h5">Marketing work by division</h2></div>
+  <p class="sec-sub">What each division got from marketing this month.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Division</th><th>This month</th><th>Website leads</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Core BPO</strong></td><td>15 of the 20 articles, including the UK customer service buyer guide, call center cost and attrition data, and SA vs India. All three case studies. The award update for Outsource Accelerator.</td><td class="num">3</td></tr>
+        <tr><td><strong>FSO</strong></td><td>Four articles refreshed: outsourced controller services, payroll costs, AML outsourcing and the UK finance function.</td><td class="num">1</td></tr>
+        <tr><td><strong>ITO</strong></td><td>IT Outsourcing page rewritten ("human-led, tech-enabled") and the new Technology page, both approved by Jarrod and live. New after-hours IT support article. Jarrod's LinkedIn profile and banner rebuilt.</td><td class="num">1</td></tr>
+        <tr><td><strong>Afrishore Quant</strong> <span class="chip">New</span></td><td>UK campaign launched for Jeremy Spira, from target list to messaging sign-off. First meeting booked for 1 December.</td><td class="num">n/a</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- 6 PLAN -->
+<section class="card" aria-labelledby="h6">
+  <div class="sec-head"><span class="sec-num">06</span><h2 id="h6">Plan for 17 November to 15 December</h2></div>
+  <p class="sec-sub">One goal: turn this month's visibility into page-1 rankings, AI recommendations and meetings. Google and AI assistants already read and rank our content. What they still need is outside proof (reviews, directory listings, mentions and links), and consistent facts about the company.</p>
+  <div class="plan">
+    <div class="step"><div class="k"></div><div>
+      <h4>Make every listing and page state the same facts (week 1)</h4>
+      <p>Correct the old figures still live on 8 pages ("750 seats", "founded 2005") to the approved 1,000+ seats and 2016 launch, and fix the /call-center/ redirect. Then claim the RevenueBase listing and align Clutch, Outsource Accelerator and DesignRush.</p>
+      <div class="why">Why: AI assistants repeat whatever the most sources agree on. Google AI Mode used RevenueBase for the exact "top BPOs in South Africa" question this month.</div>
+    </div></div>
+    <div class="step"><div class="k"></div><div>
+      <h4>Win the first real client reviews</h4>
+      <p>Send the agreed review request to 3 to 5 happy clients, first to GoodFirms (currently 0 reviews), with an anonymous option. Add the case studies to the GoodFirms portfolio.</p>
+      <div class="why">Why: Gemini already quotes our GoodFirms profile. Reviews move us up that list, and Clutch already sends us enquiries.</div>
+    </div></div>
+    <div class="step"><div class="k"></div><div>
+      <h4>Build authority for the 6 main service pages</h4>
+      <p>Post the BPESA award to Outsource Accelerator, publish the November OA article ("5 reasons UK contact center operations are relocating to South Africa"), answer 5 journalist requests a week with Afrishore data, and pitch partner pages to non-competing CX and IT vendors. Every piece links to a service page, not the homepage.</p>
+      <div class="why">Why: the content is ranking on pages 2 and 3. Outside mentions and links are what lift pages onto page 1.</div>
+    </div></div>
+    <div class="step"><div class="k"></div><div>
+      <h4>Put the case studies to work, and add a fourth</h4>
+      <p>Add case studies to the main navigation and the matching service pages, and use them in sales follow-ups. Draft a fourth, anonymised ITO case study on the multi-site home care client, which Jarrod has approved for anonymous reference.</p>
+    </div></div>
+    <div class="step"><div class="k"></div><div>
+      <h4>Track which leads come from AI</h4>
+      <p>Add "How did you hear about us?" (with ChatGPT and other AI options) to the contact form, and connect the form to Bitrix so leads arrive with their source. From the December report, meetings by division and AI-sourced leads come straight from the CRM.</p>
+    </div></div>
+    <div class="step"><div class="k"></div><div>
+      <h4>Keep the content and outreach running</h4>
+      <p>5 more articles are written and ready for upload (SA vs Philippines, travel call centers, outsourcing customer service to South Africa, tax preparation for CPA firms, global BPO), prioritising pages with real cost and comparison data, which AI cites most. Quant: prepare Jeremy for the 1 December InsureLab.ai meeting and read the message test results.</p>
+    </div></div>
+  </div>
+
+  <h3>What we will report on in December</h3>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Measure</th><th>Today</th><th>Target by mid-December</th></tr></thead>
+      <tbody>
+        <tr><td>Meetings booked, by division</td><td class="num">1 (Quant)</td><td>Every division reports a number</td></tr>
+        <tr><td>Main service pages on Google page 1 (buyer markets)</td><td class="num">0 of 6</td><td>2 of 6</td></tr>
+        <tr><td>GoodFirms client reviews</td><td class="num">0</td><td>2 or more</td></tr>
+        <tr><td>AI answers recommending Afrishore on our fixed buyer-question set</td><td class="num">Gemini only</td><td>Named by a second engine</td></tr>
+        <tr><td>Website leads with a recorded source</td><td class="num">Entered by hand</td><td>Contact form connected to the CRM</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="src">Sources: Google Search Console and Google Analytics 4 (buyer markets: US, UK, Australia, Canada, Ireland), Bitrix24 CRM, MentionScout AI answer exports (19 Oct, 26 Oct, 9 Nov, 16 Nov 2026), Brave Search API check (27 Oct 2026), Linked Helper export for the Quant campaign (5 Nov).</p>
+</section>
+
+</div>
+</main>
+<footer>Afrishore Group · Marketing</footer>
+
+</body>
+</html>
