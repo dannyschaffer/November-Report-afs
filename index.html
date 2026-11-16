@@ -114,6 +114,11 @@ ul.done li::before { content: ""; position: absolute; left: 2px; top: 7px; width
 .dot { width: 10px; height: 10px; border-radius: 50%; display: inline-block; }
 
 .src { font-size: 12px; color: var(--muted); margin-top: 12px; }
+.part { padding: 18px 2px 0; }
+.part .pl { font-family: var(--display); font-size: 11.5px; font-weight: 700; letter-spacing: 2.4px; text-transform: uppercase; color: var(--teal); }
+.part h2 { font-size: clamp(24px, 3.4vw, 30px); margin-top: 4px; }
+.part p { margin: 6px 0 0; color: var(--muted); max-width: 70ch; }
+.moves { margin-top: 8px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; font-size: 12px; color: var(--muted); }
 footer { text-align: center; font-size: 12px; color: var(--muted); padding-bottom: 32px; }
 
 @media (max-width: 760px) {
@@ -139,13 +144,15 @@ footer { text-align: center; font-size: 12px; color: var(--muted); padding-botto
   <div class="wrap">
     <div class="eyebrow">Afrishore Group · Monthly Marketing Report</div>
     <h1>November 2026: case studies live, AI now recommending us, and Afrishore Quant launched</h1>
-    <p class="lede">What we shipped, what it is producing, and the plan for the next four weeks. Buyer markets only: US, UK, Australia, Canada and Ireland. South African traffic (mostly job seekers) is excluded throughout.</p>
+    <p class="lede">Where we are, where we are going, and how we get there. Buyer markets only: US, UK, Australia, Canada and Ireland. South African traffic (mostly job seekers) is excluded throughout.</p>
     <div class="meta"><span>Reporting period: 16 October to 16 November 2026</span><span>Prepared by Danny Schaffer</span></div>
   </div>
 </header>
 
 <main>
 <div class="wrap">
+
+<div class="part"><div class="pl">Part 1</div><h2>Where we are</h2><p>What marketing shipped between 16 October and 16 November, and what it is already producing on Google and in AI answers.</p></div>
 
 <!-- 0 HEADLINES -->
 <section class="card" aria-labelledby="h0">
@@ -331,37 +338,66 @@ footer { text-align: center; font-size: 12px; color: var(--muted); padding-botto
   </div>
 </section>
 
+<div class="part"><div class="pl">Part 2</div><h2>Where we are going</h2><p>The destination: when a US or UK buyer searches Google or asks an AI assistant for an outsourcing partner in our core services, Afrishore is on page 1 and in the answer.</p></div>
+
+<!-- DESTINATION -->
+<section class="card" aria-labelledby="hd">
+  <div class="sec-head"><span class="sec-num">05</span><h2 id="hd">The five buyer questions that matter most</h2></div>
+  <p class="sec-sub">Chosen from real demand: the biggest groups of searches that found Afrishore in the US, UK, Australia, Canada and Ireland over the last 90 days. AI results from MentionScout on 16 November, asked from the US across ChatGPT, Gemini, Perplexity, Google AI Overviews and Google AI Mode. These questions are now tracked monthly, so every report shows the same scoreboard.</p>
+  <div class="tbl">
+    <table>
+      <thead><tr><th>Buyer question</th><th>Buyer searches (90 days)</th><th>Google today</th><th>AI today</th><th>Next milestone</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Best BPO companies in South Africa</strong></td><td class="num">~1,500</td><td class="num">Page 1 (position 7 to 10)</td><td><span class="chip dark">Named by 3 of 5</span><br><span style="font-size:12px;color:var(--muted)">ChatGPT, Perplexity, Google AI Overviews</span></td><td>Named by all 5 engines; Google top 5</td></tr>
+        <tr><td><strong>Outsourcing English-speaking customer support to South Africa</strong></td><td class="num">~1,000</td><td class="num">Page 1 (position 6 to 10)</td><td><span class="chip dark">Named by ChatGPT</span></td><td>Named by Perplexity and Google too</td></tr>
+        <tr><td><strong>Travel call center outsourcing</strong></td><td class="num">~1,500</td><td class="num">Page 3 (position 29)</td><td><span class="chip grey">Next target</span></td><td>Google page 1 or 2; first AI mention</td></tr>
+        <tr><td><strong>Customer service outsourcing companies, UK</strong></td><td class="num">~430</td><td class="num">Page 2 (position 13)</td><td><span class="chip grey">Next target</span></td><td>Google page 1; named via Clutch and RevenueBase</td></tr>
+        <tr><td><strong>AML outsourcing</strong></td><td class="num">~750</td><td class="num">Position 5 for "bpo in anti money laundering"; 30 for "aml outsourcing"</td><td><span class="chip grey">Next target</span></td><td>Page 1 for "aml outsourcing"; first AI mention</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="note"><strong>What decides it:</strong> on the first two questions, AI already draws on our own pages plus directories like Clutch, The Manifest and Outsource Accelerator. On the next three, it relies on directory listings and competitor round-ups (Clutch, RevenueBase, The Manifest, Outsource Accelerator for the UK; Helpware, Kroll and Deloitte for AML). So the route is the same for all five: consistent listings, real reviews, and outside mentions pointing at the right service page.</div>
+</section>
+
+<div class="part"><div class="pl">Part 3</div><h2>How we get there</h2><p>Six steps for 17 November to 15 December. Each one names the questions it moves.</p></div>
+
 <!-- 6 PLAN -->
 <section class="card" aria-labelledby="h6">
-  <div class="sec-head"><span class="sec-num">05</span><h2 id="h6">Plan for 17 November to 15 December</h2></div>
+  <div class="sec-head"><span class="sec-num">06</span><h2 id="h6">The plan, 17 November to 15 December</h2></div>
   <p class="sec-sub">One goal: turn this month's visibility into page-1 rankings, AI recommendations and meetings. Google and AI assistants already read and rank our content. What they still need is outside proof (reviews, directory listings, mentions and links), and consistent facts about the company.</p>
   <div class="plan">
     <div class="step"><div class="k"></div><div>
       <h4>Make every listing and page state the same facts (week 1)</h4>
       <p>Correct the old figures still live on 8 pages ("750 seats", "founded 2005") to the approved 1,000+ seats and 2016 launch, and fix the /call-center/ redirect. Then claim the RevenueBase listing and align Clutch, Outsource Accelerator and DesignRush.</p>
       <div class="why">Why: AI assistants repeat whatever the most sources agree on. Google AI Mode used RevenueBase for the exact "top BPOs in South Africa" question this month.</div>
+      <div class="moves">Moves:<span class="chip">Best BPOs in SA</span><span class="chip">UK customer service</span></div>
     </div></div>
     <div class="step"><div class="k"></div><div>
       <h4>Win the first real client reviews</h4>
       <p>Send the agreed review request to 3 to 5 happy clients, first to GoodFirms (currently 0 reviews), with an anonymous option. Add the case studies to the GoodFirms portfolio.</p>
       <div class="why">Why: Gemini already quotes our GoodFirms profile. Reviews move us up that list, and Clutch already sends us enquiries.</div>
+      <div class="moves">Moves:<span class="chip">Best BPOs in SA</span><span class="chip">UK customer service</span><span class="chip">SA customer support</span></div>
     </div></div>
     <div class="step"><div class="k"></div><div>
       <h4>Build authority for the 6 main service pages</h4>
       <p>Publish the November Outsource Accelerator article ("5 reasons UK contact center operations are relocating to South Africa"), answer 5 journalist requests a week with Afrishore data, and pitch partner pages to non-competing CX and IT vendors. Every piece links to a service page, not the homepage.</p>
       <div class="why">Why: the content is ranking on pages 2 and 3. Outside mentions and links are what lift pages onto page 1.</div>
+      <div class="moves">Moves:<span class="chip">All five</span></div>
     </div></div>
     <div class="step"><div class="k"></div><div>
       <h4>Put the case studies to work, and add a fourth</h4>
       <p>Add case studies to the main navigation and the matching service pages, and use them in sales follow-ups. Draft a fourth, anonymised ITO case study on the multi-site home care client, which Jarrod has approved for anonymous reference.</p>
+      <div class="moves">Moves:<span class="chip">Travel (ferry case study)</span><span class="chip">Best BPOs in SA</span></div>
     </div></div>
     <div class="step"><div class="k"></div><div>
       <h4>Track which leads come from AI</h4>
       <p>Add "How did you hear about us?" (with ChatGPT and other AI options) to the contact form, and connect the form to Bitrix so leads arrive with their source. From the December report, meetings by division and AI-sourced leads come straight from the CRM.</p>
+      <div class="moves">Moves:<span class="chip">Proves which questions bring leads</span></div>
     </div></div>
     <div class="step"><div class="k"></div><div>
       <h4>Keep the content and outreach running</h4>
       <p>5 more articles are written and ready for upload (SA vs Philippines, travel call centers, outsourcing customer service to South Africa, tax preparation for CPA firms, global BPO), prioritising pages with real cost and comparison data, which AI cites most. Quant: read the message test results and keep the focus on insurers rather than consultancies.</p>
+      <div class="moves">Moves:<span class="chip">Travel</span><span class="chip">SA customer support</span></div>
     </div></div>
   </div>
 
@@ -372,7 +408,7 @@ footer { text-align: center; font-size: 12px; color: var(--muted); padding-botto
       <tbody>
         <tr><td>Main service pages on Google page 1 (buyer markets)</td><td class="num">0 of 6</td><td>2 of 6</td></tr>
         <tr><td>GoodFirms client reviews</td><td class="num">0</td><td>2 or more</td></tr>
-        <tr><td>AI answers recommending Afrishore on our fixed buyer-question set</td><td class="num">3 of 4 on the core question</td><td>Named on the vertical questions too (iGaming, insurance, collections)</td></tr>
+        <tr><td>The five buyer questions: AI engines naming Afrishore</td><td class="num">4 mentions on 2 questions</td><td>A first mention on travel, UK customer service or AML</td></tr>
         <tr><td>Website leads with a recorded source</td><td class="num">Entered by hand</td><td>Contact form connected to the CRM</td></tr>
       </tbody>
     </table>
